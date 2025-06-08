@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ice Cream Scoop Game</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; background: #f0f8ff; }
+        #icecream { margin: 30px auto; width: 120px; min-height: 200px; }
+        .scoop { width: 100px; height: 40px; border-radius: 50px 50px 40px 40px; margin: 0 auto -20px auto; }
+        .vanilla { background: #fff8dc; border: 2px solid #f5deb3; }
+        .chocolate { background: #8b4513; border: 2px solid #5c3317; }
+        .strawberry { background: #ffb6c1; border: 2px solid #ff69b4; }
+        .mint { background: #98ff98; border: 2px solid #3cb371; }
+        button { margin: 10px; padding: 10px 20px; font-size: 16px; }
+    </style>
+</head>
+<body>
+    <h1>Ice Cream Scoop Game</h1>
+    <p>Build your ice cream by adding scoops!</p>
+    <div id="icecream">
+        <!-- Scoops will appear here -->
+    </div>
+    <div>
+        <button onclick="addScoop('vanilla')">Vanilla</button>
+        <button onclick="addScoop('chocolate')">Chocolate</button>
+        <button onclick="addScoop('strawberry')">Strawberry</button>
+        <button onclick="addScoop('mint')">Mint</button>
+        <button onclick="resetIceCream()">Reset</button>
+    </div>
+    <script>
+        function addScoop(flavor) {
+            const scoop = document.createElement('div');
+            scoop.className = 'scoop ' + flavor;
+            document.getElementById('icecream').prepend(scoop);
+        }
+        function resetIceCream() {
+            document.getElementById('icecream').innerHTML = '';
+        }
+    </script>
+</body>
+</html>
